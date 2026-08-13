@@ -8,6 +8,7 @@ class clsInputValidate
 {
 
 public:
+	//bACk as
 
 	static bool IsNumberBetween(short Number, short From, short To)
 	{
