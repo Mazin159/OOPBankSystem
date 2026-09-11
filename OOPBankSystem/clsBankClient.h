@@ -75,6 +75,28 @@
 
 
         }
+        static void _SaveClientsDataToFile(vector <clsBankClient> vClients) {
+            fstream MyFile;
+            MyFile.open("Clients.txt", ios::out);//overwrite
+
+            string DataLine;
+
+            if (MyFile.is_open())
+            {
+
+                for (clsBankClient C : vClients)
+                {
+                    DataLine = _ConverClientObjectToLine(C);
+                    MyFile << DataLine << endl;
+
+                }
+
+                MyFile.close();
+
+            }
+
+
+        }
 
 
 
