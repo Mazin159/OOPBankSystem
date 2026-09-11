@@ -21,7 +21,7 @@
         string _AccountNumber;
         float _AccountBalance;
 
-        static clsBankClient _ConvertLineToClientObject(string Line , string Seperator ="#//#") {
+        static clsBankClient _ConvertLinetoClientObject(string Line , string Seperator ="#//#") {
             vector <string> vClientData;
 
             vClientData = clsString::Split(Line, Seperator);
@@ -47,6 +47,36 @@
             return stClientRecord;
 
         }
+        static vector <clsBankClient> _LoadClientsDataFromFile() {
+            vector <clsBankClient> vClients;
+
+            fstream MyFile;
+            MyFile.open("Clients.txt", ios::in);//read Mode
+
+            if (MyFile.is_open())
+            {
+
+                string Line;
+
+
+                while (getline(MyFile, Line))
+                {
+
+                    clsBankClient Client = _ConvertLinetoClientObject(Line);
+
+                    vClients.push_back(Client);
+                }
+
+                MyFile.close();
+
+            }
+
+            return vClients;
+
+
+        }
+
+
 
 
 
@@ -98,7 +128,7 @@
 
                 while (getline(MyFile, Line)) {
 
-                    clsBankClient Client = _ConvertLineToClientObject(Line);
+                    clsBankClient Client = _ConvertLinetoClientObject(Line);
                     if (Client._AccountNumber == AccountNumber) {
                         MyFile.close();
                         return Client;
@@ -120,7 +150,7 @@
 
                 while (getline(MyFile, Line)) {
 
-                    clsBankClient Client = _ConvertLineToClientObject(Line);
+                    clsBankClient Client = _ConvertLinetoClientObject(Line);
                     if (Client._AccountNumber == AccountNumber && Client.PinCode == PinCode) {
                         MyFile.close();
                         return Client;
