@@ -15,6 +15,7 @@
     private:
 
         enum enMode { EmptyMode = 0 , UpdateMode=1};
+        
 
         enMode _Mode;
         string _PinCode;
@@ -205,7 +206,11 @@
             cout << "\n___________________\n";
 
         }
+        enum enSaveResults { svFaildEmptyObject = 0, svSucceeded = 1 };
 
+        enSaveResults Save() {
+
+        }
         
     };
 
