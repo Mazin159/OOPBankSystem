@@ -32,6 +32,21 @@
         static clsBankClient _GetEmptyClientObject() {
             return clsBankClient(enMode::EmptyMode, "", "", "", "", "", "", 0);
         }
+        static string _ConverClientObjectToLine(clsBankClient Client, string Seperator = "#//#")
+        {
+
+            string stClientRecord = "";
+            stClientRecord += Client.FirstName + Seperator;
+            stClientRecord += Client.LastName + Seperator;
+            stClientRecord += Client.Email + Seperator;
+            stClientRecord += Client.Phone + Seperator;
+            stClientRecord += Client.AccountNumber() + Seperator;
+            stClientRecord += Client.PinCode + Seperator;
+            stClientRecord += to_string(Client.AccountBalance);
+
+            return stClientRecord;
+
+        }
 
 
 
@@ -51,6 +66,9 @@
             return (_Mode == enMode::EmptyMode);
         }
 
+        string AccountNumber() {
+            return _AccountNumber;
+        }
         void SetPinCode(string PinCode){
             _PinCode = PinCode;
         }
