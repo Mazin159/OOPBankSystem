@@ -9,7 +9,18 @@ class clsInputValidate
 
 public:
 	
+	static float ReadFloatNumber(string ErrorMessage = "Invalid Number, Enter again\n")
+	{
+		float Number;
+		while (!(cin >> Number))
+		{
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
+			cout << ErrorMessage;
+		}
+		return Number;
+	}
 	static bool IsNumberBetween(short Number, short From, short To)
 	{
 		if (Number >= From && Number <= To)

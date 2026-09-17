@@ -76,7 +76,7 @@
 
 
         }
-        static void _SaveClientsDataToFile(vector <clsBankClient> vClients) {
+        static void _SaveCleintsDataToFile(vector <clsBankClient> vClients) {
             fstream MyFile;
             MyFile.open("Clients.txt", ios::out);//overwrite
 
@@ -99,6 +99,24 @@
 
         }
 
+         void _Update() {
+
+
+            vector <clsBankClient> _vClients;
+            _vClients = _LoadClientsDataFromFile();
+
+            for (clsBankClient& C : _vClients)
+            {
+                if (C.AccountNumber() == AccountNumber())
+                {
+                    C = *this;
+                    break;
+                }
+            }
+
+            _SaveCleintsDataToFile(_vClients);
+
+        }
 
 
 
@@ -210,6 +228,20 @@
 
         enSaveResults Save() {
 
+            switch (_Mode)
+            {
+            case enMode::EmptyMode:
+            {
+                return enSaveResults::svFaildEmptyObject;
+            }
+
+            case enMode::UpdateMode:
+            {
+                _Update();
+
+                return enSaveResults::svSucceeded;
+            }
+            }
         }
         
     };
