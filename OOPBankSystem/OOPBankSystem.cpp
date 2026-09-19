@@ -114,7 +114,6 @@ void AddNewClient() {
 int main()
 
 {
-    AddNewClient();
     system("pause>0");
     return 0;
 
