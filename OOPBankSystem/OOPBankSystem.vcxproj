@@ -123,19 +123,27 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="clsAddNewClientScreen.cpp" />
     <ClCompile Include="clsBankClient.cpp" />
+    <ClCompile Include="clsClientListScreen.cpp" />
     <ClCompile Include="clsDate.cpp" />
     <ClCompile Include="clsInputValidate.cpp" />
+    <ClCompile Include="clsMainScreen.cpp" />
     <ClCompile Include="clsPerson.cpp" />
+    <ClCompile Include="clsScreen.cpp" />
     <ClCompile Include="clsString.cpp" />
     <ClCompile Include="clsUtil.cpp" />
     <ClCompile Include="OOPBankSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="clsAddNewClientScreen.h" />
     <ClInclude Include="clsBankClient.h" />
+    <ClInclude Include="clsClientListScreen.h" />
     <ClInclude Include="clsDate.h" />
     <ClInclude Include="clsInputValidate.h" />
+    <ClInclude Include="clsMainScreen.h" />
     <ClInclude Include="clsPerson.h" />
+    <ClInclude Include="clsScreen.h" />
     <ClInclude Include="clsString.h" />
     <ClInclude Include="clsUtil.h" />
   </ItemGroup>

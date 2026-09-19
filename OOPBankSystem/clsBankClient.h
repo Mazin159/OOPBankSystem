@@ -234,7 +234,7 @@
             return (!Client.IsEmpty());
         }
 
-        void Print()
+       /* void Print()
         {
             cout << "\nClient Card:";
             cout << "\n___________________";
@@ -248,7 +248,7 @@
             cout << "\nBalance     : " << _AccountBalance;
             cout << "\n___________________\n";
 
-        }
+        }*/
         enum enSaveResults { svFaildEmptyObject = 0, svSucceeded = 1 ,svFaildAccountNumberExists = 2 };
 
         static clsBankClient GetAddNewClientObject(string AccountNumber) {
@@ -308,7 +308,19 @@
         static vector <clsBankClient> GetClientsList() {
             return _LoadClientsDataFromFile();
         }
+        static double GetTotalBalances()
+        {
+            vector <clsBankClient> vClients = clsBankClient::GetClientsList();
 
+            double TotalBalances = 0;
+
+            for (clsBankClient Client : vClients)
+            {
+                TotalBalances += Client.AccountBalance;
+            }
+
+            return TotalBalances;
+        }
         
     };
 
