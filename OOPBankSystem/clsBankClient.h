@@ -271,6 +271,7 @@
                 }
                 _AddNew();
                 _Mode = enMode::UpdateMode;
+                return enSaveResults::svSucceeded;
 
             }
             }
