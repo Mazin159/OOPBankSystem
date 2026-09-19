@@ -1,11 +1,13 @@
 #pragma once
 #include <iostream>
+#include <iomanip>
 #include "clsScreen.h"
 #include "clsClientListScreen.h"
 #include "clsInputValidate.h"
 #include "clsDeleteClientScreen.h"
-#include <iomanip>
 #include "clsAddNewClientScreen.h"
+#include "clsUpdateClientScreen.h"
+
 
 
 class clsMainScreen : protected clsScreen
@@ -112,13 +114,14 @@ class clsMainScreen : protected clsScreen
 
 	static void _ShowUpdateClientScreen()
 	{
-		cout << "\nUpdate Client Screen Will be here...\n";
+		//cout << "\nUpdate Client Screen Will be here...\n";
+		clsUpdateClientScreen::ShowUpdateClientScreen();
 
 	}
 
 	static void _ShowFindClientScreen()
 	{
-		cout << "\nFind Client Screen Will be here...\n";
+		//cout << "\nFind Client Screen Will be here...\n";
 
 	}
 
