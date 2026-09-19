@@ -4,6 +4,7 @@
 #include "clsInputValidate.h"
 #include "clsDate.h"
 using namespace std;
+//ui 
 void ReadClientInfo(clsBankClient& Client)
 {
     cout << "\nEnter FirstName: ";
@@ -69,7 +70,5 @@ int main()
     system("pause>0");
     return 0;
 
-
-    
 }
 
