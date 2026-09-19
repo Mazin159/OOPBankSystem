@@ -114,6 +114,10 @@ void AddNewClient() {
 int main()
 
 {
+    clsBankClient C = clsBankClient::Find("A103");
+    C.Print();
+    C.Delete();
+    C.Print();
     system("pause>0");
     return 0;
 
