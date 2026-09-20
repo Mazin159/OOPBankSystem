@@ -7,7 +7,8 @@
 #include "clsDeleteClientScreen.h"
 #include "clsAddNewClientScreen.h"
 #include "clsUpdateClientScreen.h"
-
+#include "clsFindClientScreen.h"
+#include "clsTransactionsScreen.h"
 
 
 class clsMainScreen : protected clsScreen
@@ -122,12 +123,14 @@ class clsMainScreen : protected clsScreen
 	static void _ShowFindClientScreen()
 	{
 		//cout << "\nFind Client Screen Will be here...\n";
+		clsFindClientScreen::ShowFindClientScreen();
 
 	}
 
 	static void _ShowTransactionsMenue()
 	{
-		cout << "\nTransactions Menue Will be here...\n";
+		//cout << "\nTransactions Menue Will be here...\n";
+		clsTransactionsScreen::ShowTransactionsMenue();
 
 	}
 
