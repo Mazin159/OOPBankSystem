@@ -193,6 +193,8 @@ void ShowClientsList()
     cout << "_________________________________________\n" << endl;
 
 }
+
+
 void PrintClientRecordBalanceLine(clsBankClient Client)
 {
 
@@ -201,8 +203,6 @@ void PrintClientRecordBalanceLine(clsBankClient Client)
     cout << "| " << setw(12) << left << Client.AccountBalance;
 
 }
-
-
 void ShowTotalBalances()
 {
 
