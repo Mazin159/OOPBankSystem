@@ -151,6 +151,11 @@ private:
 
 public:
 
+    enum enPermissions { 
+       eAll = -1 , pListClients = 1 , pAddNewClient = 2, pDeleteClient = 4, pUpdateClients = 8,
+       pFindClient = 16, pTranactions = 32, pMangeUsers =64
+    };
+
     clsUser(enMode Mode, string FirstName, string LastName,
         string Email, string Phone, string UserName, string Password,
         int Permissions) :
@@ -260,11 +265,12 @@ public:
 
     enum enSaveResults { svFaildEmptyObject = 0, svSucceeded = 1, svFaildUserExists = 2 };
 
-     static bool IsUserExit(string UserName){
+     static bool IsUserExist(string UserName){
 
         clsUser User = clsUser::Find(UserName);
         return (!User.IsEmpty());
-        }
+
+     }
 
 
         enSaveResults Save()
@@ -291,7 +297,7 @@ public:
             case enMode::AddNewMode:
             {
                 //This will add new record to file or database
-                if (clsUser::IsUserExit(_UserName))
+                if (clsUser::IsUserExist(_UserName))
                 {
                     return enSaveResults::svFaildUserExists;
                 }
