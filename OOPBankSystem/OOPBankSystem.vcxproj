@@ -138,6 +138,7 @@
     <ClCompile Include="clsString.cpp" />
     <ClCompile Include="clsTransactionsScreen.cpp" />
     <ClCompile Include="clsUpdateClientScreen.cpp" />
+    <ClCompile Include="clsUser.cpp" />
     <ClCompile Include="clsUtil.cpp" />
     <ClCompile Include="clsWithdrawScreen.cpp" />
     <ClCompile Include="OOPBankSystem.cpp" />
@@ -158,6 +159,7 @@
     <ClInclude Include="clsString.h" />
     <ClInclude Include="clsTransactionsScreen.h" />
     <ClInclude Include="clsUpdateClientScreen.h" />
+    <ClInclude Include="clsUser.h" />
     <ClInclude Include="clsUtil.h" />
     <ClInclude Include="clsWithdrawScreen.h" />
   </ItemGroup>
