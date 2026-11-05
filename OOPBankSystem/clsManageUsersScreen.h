@@ -125,6 +125,11 @@ class clsManageUsersScreen : protected clsScreen
 public :
 
 	static void ShowManageUsersMenue() {
+
+        if (!_CheckAccessRights(clsUser::enPermissions::pMangeUsers)) {
+            return;
+        }
+
 		system("cls");
 		_DrawScreenHeader("Mange Users Screen");
 

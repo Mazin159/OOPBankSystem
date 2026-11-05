@@ -28,6 +28,9 @@ private:
 public:
     static void ShowDeleteClientScreen()
     {
+        if (!_CheckAccessRights(clsUser::enPermissions::pDeleteClient)) {
+            return;
+        }
 
         _DrawScreenHeader("\tDelete Client Screen");
 

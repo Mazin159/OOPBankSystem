@@ -1,7 +1,8 @@
 #pragma once
 #include <iostream>
 #include <iomanip>
-
+#include "clsUser.h"
+#include "Global.h"
 
 using namespace std;
 
@@ -19,6 +20,22 @@ protected:
         }
         cout << "\n\t\t\t\t\t______________________________________\n\n";
     }
+
+    static bool _CheckAccessRights(clsUser::enPermissions Permission) {
+        
+        if (!CurrentUser.CheckAccessPermission(Permission)) {
+            cout << "\t\t\t\t\t_____________________________________________________";
+            cout << "\n\n\t\t\t\t\t Access Denied! Contact your Admin ";
+            cout << "\n\t\t\t\t\t_____________________________________________________";
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+  
+    }
+    
 
 
 };

@@ -47,6 +47,9 @@ class clsAddNewClientScreen : protected clsScreen
 public:
     static void ShowAddNewClientScreen()
     {
+        if (!_CheckAccessRights(clsUser::enPermissions::pAddNewClient)) {
+            return;
+        }
 
         _DrawScreenHeader("\t  Add New Client Screen");
 
