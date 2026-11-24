@@ -3,6 +3,7 @@
 #include <string>
 #include "clsPerson.h"
 #include "clsString.h"
+#include "clsDate.h"
 #include <vector>
 #include <fstream>
 
@@ -18,6 +19,7 @@ private:
     int _Permissions;
 
     bool _MarkedForDelete = false;
+
     string _PrepareLogInRecord(string Seperator = "#//#")
     {
         string LoginRecord = "";
@@ -350,6 +352,21 @@ public:
         return true;
 
     }
+    void RegisterLogIn()
+    {
+        string stDataLine = _PrepareLogInRecord();
+
+        fstream MyFile;
+        MyFile.open("LoginRegister.txt", ios::out | ios::app);
+
+        if (MyFile.is_open())
+        {
+            MyFile << stDataLine << endl;
+
+            MyFile.close();
+        }
+    }
+   
 
     static clsUser GetAddNewUserObject(string UserName)
     {
